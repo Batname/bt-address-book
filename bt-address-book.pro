@@ -14,9 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    addresswidget.cpp
+    addresswidget.cpp \
+    newaddresstab.cpp \
+    tablemodel.cpp
 
 HEADERS  += mainwindow.h \
-    addresswidget.h
+    addresswidget.h \
+    newaddresstab.h \
+    tablemodel.h
 
 FORMS    +=
