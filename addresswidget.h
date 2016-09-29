@@ -14,7 +14,7 @@ QT_END_NAMESPACE
 
 class AddressWidget : public QTabWidget
 {
-//    Q_OBJECT
+    Q_OBJECT
 
 public:
     AddressWidget(QWidget *parent = 0);
