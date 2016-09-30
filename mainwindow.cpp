@@ -1,5 +1,9 @@
 #include "mainwindow.h"
 
+#include <QAction>
+#include <QFileDialog>
+#include <QMenuBar>
+
 MainWindow::MainWindow()
 {
 
