@@ -16,11 +16,13 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     addresswidget.cpp \
     newaddresstab.cpp \
-    tablemodel.cpp
+    tablemodel.cpp \
+    adddialog.cpp
 
 HEADERS  += mainwindow.h \
     addresswidget.h \
     newaddresstab.h \
-    tablemodel.h
+    tablemodel.h \
+    adddialog.h
 
 FORMS    +=
