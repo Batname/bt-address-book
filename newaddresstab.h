@@ -4,7 +4,7 @@
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE
-class Qlabel;
+class QLabel;
 class QPushButton;
 class QVBoxLayout;
 QT_END_NAMESPACE
@@ -12,6 +12,7 @@ QT_END_NAMESPACE
 class NewAddressTab : public QWidget
 {
     Q_OBJECT
+
 public:
     NewAddressTab(QWidget *parent = 0);
 
@@ -22,9 +23,10 @@ signals:
     void sendDetails(QString name, QString address);
 
 private:
-    Qlabel *descriptionLabel;
+    QLabel *descriptionLabel;
     QPushButton *addButton;
     QVBoxLayout *mainLayout;
+
 };
 
-#endif // NEWADDRESSTAB_H
+#endif NEWADDRESSTAB_H

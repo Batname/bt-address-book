@@ -1,18 +1,18 @@
-#include "newaddresstab.h"
 #include "adddialog.h"
+#include "newaddresstab.h"
 
-#include <QWidget>
+#include <QtWidgets>
 
 NewAddressTab::NewAddressTab(QWidget *parent)
-    : QWidget(parent)
 {
     Q_UNUSED(parent);
 
-    descriptionLabel = new QLabel(tr("There are currently no contacts in your address book. ", "\nClick  Add to add now contacts."));
+    descriptionLabel = new QLabel(tr("There are currently no contacts in your address book. "
+                                      "\nClick Add to add new contacts."));
 
-    addButton = new QPushButton(tr("add"));
+    addButton = new QPushButton(tr("Add"));
 
-    connect(addButton, &QAbstructButton::clicked, this, &NewAddressTab::addEntry);
+    connect(addButton, &QAbstractButton::clicked, this, &NewAddressTab::addEntry);
 
     mainLayout = new QVBoxLayout;
     mainLayout->addWidget(descriptionLabel);
@@ -25,7 +25,7 @@ void NewAddressTab::addEntry()
 {
     AddDialog aDialog;
 
-    if(aDialog.exec()) {
+    if (aDialog.exec()) {
         QString name = aDialog.nameText->text();
         QString address = aDialog.addressText->toPlainText();
 

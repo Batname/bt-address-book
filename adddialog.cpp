@@ -1,14 +1,14 @@
 #include "adddialog.h"
 
-#include <QWidget>
+#include <QtWidgets>
 
-AddDialog::AddDialog(QWidget *parent = 0)
+AddDialog::AddDialog(QWidget *parent)
     : QDialog(parent)
 {
-    nameLabel = QLabel("Name");
-    addressLabel = QLabel("Address");
-    okButton = QPushButton("Ok");
-    cancelButton = QPushButton("Cancel");
+    nameLabel = new QLabel("Name");
+    addressLabel = new QLabel("Address");
+    okButton = new QPushButton("OK");
+    cancelButton = new QPushButton("Cancel");
 
     nameText = new QLineEdit;
     addressText = new QTextEdit;
@@ -25,15 +25,14 @@ AddDialog::AddDialog(QWidget *parent = 0)
     buttonLayout->addWidget(okButton);
     buttonLayout->addWidget(cancelButton);
 
-    gLayout->addLayout(buttonLayout, 1, 2, Qt::AlignLeft);
+    gLayout->addLayout(buttonLayout, 2, 1, Qt::AlignRight);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->addLayout(gLayout);
-
     setLayout(mainLayout);
 
-    connect(okButton, &QAbstractButton::click, this, QDialog::accept);
-    connect(cancelButton, &QAbstractButton::click, this, QDialog::reject);
+    connect(okButton, &QAbstractButton::clicked, this, &QDialog::accept);
+    connect(cancelButton, &QAbstractButton::clicked, this, &QDialog::reject);
 
-    setWindowTitle(tr("Add a contact"));
+    setWindowTitle(tr("Add a Contact"));
 }
